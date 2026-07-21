@@ -429,8 +429,8 @@ h3 {
 }
 
 .contact-section {
-  padding: 74px 0;
-  background: var(--teal);
+  padding: 80px 0;
+  background: var(--ink);
   color: white;
 }
 
@@ -438,49 +438,53 @@ h3 {
   color: #ffd08b;
 }
 
-.contact-inner {
-  display: flex;
-  gap: 40px;
-  align-items: end;
-  justify-content: space-between;
+.contact-shell {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 56px;
+  align-items: start;
 }
 
-.contact-inner h2 {
+.contact-shell h2 {
   max-width: 740px;
 }
 
-.contact-grid {
+.contact-panel {
   display: grid;
-  min-width: min(100%, 440px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
-.contact-card {
+.contact-row {
   display: grid;
-  gap: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  gap: 8px;
+  min-height: 104px;
+  align-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.12);
+  padding: 20px;
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
   text-decoration: none;
 }
 
-.contact-card:hover {
-  background: rgba(255, 255, 255, 0.18);
+.contact-row:hover {
+  background: #fff3df;
   text-decoration: none;
 }
 
-.contact-card span {
-  color: #ffd08b;
+.contact-row span {
+  color: var(--teal);
   font-size: 0.78rem;
   font-weight: 850;
   text-transform: uppercase;
 }
 
-.contact-card strong {
-  color: white;
-  font-size: 0.96rem;
+.contact-row strong {
+  color: var(--ink);
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  line-height: 1.25;
   overflow-wrap: anywhere;
 }
 
@@ -558,7 +562,7 @@ h3 {
 
   .hero-content,
   .split,
-  .contact-inner {
+  .contact-shell {
     grid-template-columns: 1fr;
     display: grid;
     gap: 32px;
@@ -581,8 +585,7 @@ h3 {
     justify-content: start;
   }
 
-  .contact-grid {
+  .contact-panel {
     grid-template-columns: 1fr;
-    min-width: 0;
   }
 }
